@@ -12,7 +12,7 @@ import React from "react";
 const PassWord = () => {
   return (
     <View style={styles.passcontainer}>
-      <TextInput placeholder="Password" style={styles.passinput} />
+      <TextInput placeholder="Password" style={styles.passinput} secureTextEntry />
       <PassIcon style={styles.passicon} />
       <Eyeicon style={styles.eyeicon} />
       <View style={styles.textpass}>

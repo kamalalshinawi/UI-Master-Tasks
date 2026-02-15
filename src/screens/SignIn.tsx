@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { s, vs } from "react-native-size-matters";
-import Login from "../components/Login"
+import Login from "../components/Login";
 import React from "react";
 
 const SignIn = () => {
@@ -9,9 +9,11 @@ const SignIn = () => {
       <View style={styles.headerText}>
         <Text style={styles.textcontent}>Welcome{"\n"}Back!</Text>
       </View>
-      
-        <Login />
-      
+
+      <Login />
+      <TouchableOpacity style={styles.loginButton}>
+        <Text style={styles.loginText}>Login</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -31,5 +33,18 @@ const styles = StyleSheet.create({
   textcontent: {
     fontSize: s(36),
     fontWeight: "bold",
+  },
+  loginButton: {
+    backgroundColor: "#F83758",
+    height: vs(50),
+    width: s(300),
+    borderRadius: s(4),
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  loginText: {
+    color: "#FFFFFF",
+    fontSize: s(20),
+    fontWeight: "semibold",
   },
 });

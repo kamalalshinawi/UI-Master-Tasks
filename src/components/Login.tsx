@@ -20,6 +20,6 @@ export default Login;
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom: vs(71),
+    paddingBottom: vs(20),
   },
 });
