@@ -1,5 +1,5 @@
 import * as React from "react";
-import Svg, { Path, Defs, LinearGradient, Stop, SvgProps } from "react-native-svg";
+import Svg, { Path, Defs, LinearGradient, Stop, SvgProps , G,ClipPath,Rect } from "react-native-svg";
 const SplashIcon = (props:SvgProps) => (
   <Svg
     width={125}
@@ -92,5 +92,37 @@ export const PassIcon = (props:SvgProps) => (
       d="M4 4C4 1.79086 5.79086 0 8 0C10.2091 0 12 1.79086 12 4V7H10V4C10 2.89543 9.10457 2 8 2C6.89543 2 6 2.89543 6 4V7H4V4Z"
       fill="#626262"
     />
+  </Svg>
+);
+
+export const Eyeicon = (props:SvgProps) => (
+  <Svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    {...props}
+  >
+    <G clipPath="url(#clip0_52_101)">
+      <Path
+        d="M0.833496 10C0.833496 10 4.16683 3.33337 10.0002 3.33337C15.8335 3.33337 19.1668 10 19.1668 10C19.1668 10 15.8335 16.6667 10.0002 16.6667C4.16683 16.6667 0.833496 10 0.833496 10Z"
+        stroke="#626262"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+        stroke="#626262"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </G>
+    <Defs>
+      <ClipPath id="clip0_52_101">
+        <Rect width={20} height={20} fill="white" />
+      </ClipPath>
+    </Defs>
   </Svg>
 );
