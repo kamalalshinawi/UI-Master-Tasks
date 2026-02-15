@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { s, vs } from "react-native-size-matters";
 import { PassIcon, Eyeicon } from "../assets/icons";
 import React from "react";
@@ -9,6 +15,11 @@ const PassWord = () => {
       <TextInput placeholder="Password" style={styles.passinput} />
       <PassIcon style={styles.passicon} />
       <Eyeicon style={styles.eyeicon} />
+      <View style={styles.textpass}>
+        <TouchableOpacity>
+          <Text style={styles.forgettext}>Forgot Password?</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -41,5 +52,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: s(2),
     top: vs(17),
+  },
+  textpass: {
+    flexDirection: "row-reverse",
+    paddingTop: vs(7),
+  },
+  forgettext: {
+    color: "#F83758",
+    fontSize: s(12),
+    fontWeight: "regular",
   },
 });
