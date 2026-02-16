@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Header from "../components/Header";
 import { HandIcon } from "../assets/icons";
+import BannerView from "../components/BannerView"
 import React from "react";
 
 const UserScreen = () => {
@@ -13,6 +14,9 @@ const UserScreen = () => {
       <View style={styles.screencontent}>
         <Text style={styles.textOne}>Hello Fola {<HandIcon />}</Text>
         <Text style={styles.textTwo}>Let’s start shopping!</Text>
+      </View>
+      <View style={styles.bannerView}>
+        <BannerView  textBanner="20% OFF DURING THE WEEKEND" />
       </View>
     </View>
   );
@@ -38,4 +42,7 @@ const styles = StyleSheet.create({
     fontSize: s(12),
     fontWeight: "semibold",
   },
+  bannerView:{
+    marginTop:s(20),
+  }
 });
