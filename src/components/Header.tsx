@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
+    marginBottom: vs(20),
     // backgroundColor:"red"
   },
   Menu:{
