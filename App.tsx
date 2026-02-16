@@ -4,13 +4,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import SplashScreen from "./src/screens/SplashScreen"
 import SignIn from "./src/screens/SignIn"
 import HomeScreen from './src/screens/HomeScreen';
-
+import UserScreen from './src/screens/UserScreen';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       {/* <SplashScreen /> */}
       {/* <SignIn /> */}
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <UserScreen />
     </SafeAreaView>
   );
 }
