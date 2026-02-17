@@ -52,10 +52,11 @@ const UserScreen = () => {
 
       <FlatList
         data={Banners}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <BannerView textBanner={item.title} />}
         horizontal
-        contentContainerStyle={{ gap: s(5) }}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ gap: s(10) , marginTop:vs(20) }}
       />
     </View>
   );
