@@ -11,6 +11,7 @@ import { HandIcon } from "../assets/icons";
 import BannerView from "../components/BannerView";
 import TypeCard from "../components/TypeCard";
 import CardList from "../components/CardList";
+import BannerList from "../components/BannerList"
 import React from "react";
 
 const UserScreen = () => {
@@ -84,8 +85,12 @@ const UserScreen = () => {
         </TouchableOpacity>
       </View>
 
-          <View style={{marginTop: vs(25),}}> 
+          <View style={{marginTop: vs(25), }}> 
             <CardList />
+            
+          </View>
+          <View style={{marginTop:vs(20)}}>
+            <BannerList />
           </View>
 
     </View>
