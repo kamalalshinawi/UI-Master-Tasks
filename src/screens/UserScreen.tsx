@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Header from "../components/Header";
 import { HandIcon } from "../assets/icons";
@@ -62,11 +68,17 @@ const UserScreen = () => {
       </View>
 
       <View style={styles.middleContent}>
-        <Text style={{ fontSize: s(20), fontWeight: "semibold",color:"#000000" }}>
+        <Text
+          style={{ fontSize: s(20), fontWeight: "semibold", color: "#000000" }}
+        >
           Top Categories
         </Text>
         <TouchableOpacity>
-          <Text style={{color:"#F17547",fontSize:s(16),fontWeight:"medium"}}>See All</Text>
+          <Text
+            style={{ color: "#F17547", fontSize: s(16), fontWeight: "medium" }}
+          >
+            See All
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
