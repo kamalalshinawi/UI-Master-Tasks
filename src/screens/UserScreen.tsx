@@ -1,11 +1,41 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Header from "../components/Header";
 import { HandIcon } from "../assets/icons";
-import BannerView from "../components/BannerView"
+import BannerView from "../components/BannerView";
 import React from "react";
 
 const UserScreen = () => {
+    interface Banner{
+        id:number,
+        title:string,
+    };
+  const Banners :Banner[] = [
+    {
+      id: 1,
+      title: "20% OFF DURING THE WEEKEND",
+    },
+    {
+      id: 2,
+      title: "20% OFF DURING THE WEEKEND",
+    },
+    {
+      id: 3,
+      title: "20% OFF DURING THE WEEKEND",
+    },
+  ];
+  //   const Banners = ["Offer1", "offer2", "offer3"];
+  //   const DataBanner = {
+  //     offer1: {
+  //       id: 1,
+  //       title: "20% OFF DURING THE WEEKEND",
+  //     },
+  //     offer2: {
+  //       id: 2,
+  //       title: "20% OFF DURING THE WEEKEND",
+  //     },
+
+  //   };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -15,9 +45,18 @@ const UserScreen = () => {
         <Text style={styles.textOne}>Hello Fola {<HandIcon />}</Text>
         <Text style={styles.textTwo}>Let’s start shopping!</Text>
       </View>
-      <View style={styles.bannerView}>
+      {/* <View style={styles.bannerView}>
         <BannerView  textBanner="20% OFF DURING THE WEEKEND" />
-      </View>
+         <BannerView  textBanner="20% OFF DURING THE WEEKEND" />
+      </View> */}
+
+      <FlatList
+        data={Banners}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <BannerView textBanner={item.title} />}
+        horizontal
+        contentContainerStyle={{ gap: s(5) }}
+      />
     </View>
   );
 };
@@ -42,7 +81,7 @@ const styles = StyleSheet.create({
     fontSize: s(12),
     fontWeight: "semibold",
   },
-  bannerView:{
-    marginTop:s(20),
-  }
+  bannerView: {
+    marginTop: s(20),
+  },
 });
