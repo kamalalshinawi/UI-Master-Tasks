@@ -9,6 +9,8 @@ import { s, vs } from "react-native-size-matters";
 import Header from "../components/Header";
 import { HandIcon } from "../assets/icons";
 import BannerView from "../components/BannerView";
+import TypeCard from "../components/TypeCard";
+import CardList from "../components/CardList";
 import React from "react";
 
 const UserScreen = () => {
@@ -81,6 +83,11 @@ const UserScreen = () => {
           </Text>
         </TouchableOpacity>
       </View>
+
+          <View style={{marginTop: vs(25),}}> 
+            <CardList />
+          </View>
+
     </View>
   );
 };
