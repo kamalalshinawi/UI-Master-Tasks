@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Header from "../components/Header";
 import { HandIcon } from "../assets/icons";
@@ -6,11 +6,11 @@ import BannerView from "../components/BannerView";
 import React from "react";
 
 const UserScreen = () => {
-    interface Banner{
-        id:number,
-        title:string,
-    };
-  const Banners :Banner[] = [
+  interface Banner {
+    id: number;
+    title: string;
+  }
+  const Banners: Banner[] = [
     {
       id: 1,
       title: "20% OFF DURING THE WEEKEND",
@@ -50,14 +50,25 @@ const UserScreen = () => {
          <BannerView  textBanner="20% OFF DURING THE WEEKEND" />
       </View> */}
 
-      <FlatList
-        data={Banners}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <BannerView textBanner={item.title} />}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ gap: s(10) , marginTop:vs(20) }}
-      />
+      <View>
+        <FlatList
+          data={Banners}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => <BannerView textBanner={item.title} />}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ gap: s(10), marginTop: vs(20) }}
+        />
+      </View>
+
+      <View style={styles.middleContent}>
+        <Text style={{ fontSize: s(20), fontWeight: "semibold",color:"#000000" }}>
+          Top Categories
+        </Text>
+        <TouchableOpacity>
+          <Text style={{color:"#F17547",fontSize:s(16),fontWeight:"medium"}}>See All</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -84,5 +95,11 @@ const styles = StyleSheet.create({
   },
   bannerView: {
     marginTop: s(20),
+  },
+  middleContent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: vs(20),
   },
 });
