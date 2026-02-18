@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import { s, vs } from "react-native-size-matters";
-import EvilIcons from '@expo/vector-icons/EvilIcons';
+import { LoveIcon } from "../assets/icons";
 import React, { FC } from "react";
 
 interface TypeImage {
@@ -11,18 +11,26 @@ interface TypeImage {
 const BannerCard: FC<TypeImage> = ({ img, title }) => {
   return (
     <View style={styles.bannercard}>
-      <View style={{ flexDirection: "row",justifyContent:"space-between",marginTop:vs(4), }}>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginTop: vs(4),
+        }}
+      >
         <View
           style={{
             height: vs(23),
             width: s(50),
             backgroundColor: "#ffffff",
             borderRadius: s(12),
-            alignItems:"center",
-            justifyContent:"center",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Text style={{fontSize:s(10),fontWeight:"semibold"}}>50% OFF</Text>
+          <Text style={{ fontSize: s(10), fontWeight: "semibold" }}>
+            50% OFF
+          </Text>
         </View>
 
         <View
@@ -32,17 +40,25 @@ const BannerCard: FC<TypeImage> = ({ img, title }) => {
             borderRadius: s(50),
             borderWidth: s(1),
             borderColor: "#D3D3D3",
-            alignItems:"center",
-            justifyContent:"center",
-
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           {/* <EvilIcons name="heart" size={20} color="black" /> */}
+          <LoveIcon />
         </View>
       </View>
 
       <View>
-        <Image source={{ uri: img }} />
+        <Image
+          source={{ uri: img }}
+          style={{
+            width: s(70),
+            height: vs(70),
+            resizeMode: "contain",
+            alignSelf: "center",
+          }}
+        />
       </View>
 
       <Text
