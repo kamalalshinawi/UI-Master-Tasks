@@ -4,8 +4,10 @@ import Login from "../components/Login";
 import FFFFFF from "../components/SocialSignIn";
 import React from "react";
 import SocialSignIn from "../components/SocialSignIn";
+import { useNavigation } from "@react-navigation/native";
 
 const SignIn = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.headerText}>
@@ -13,7 +15,10 @@ const SignIn = () => {
       </View>
 
       <Login />
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={() => navigation.navigate("Home")}
+      >
         <Text style={styles.loginText}>Login</Text>
       </TouchableOpacity>
       <SocialSignIn />

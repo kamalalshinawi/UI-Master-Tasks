@@ -7,8 +7,10 @@ import {
 } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <ImageBackground
       source={require("../assets/backgroundcolor.jpeg")}
@@ -26,7 +28,7 @@ const HomeScreen = () => {
         <Text
           style={{
             color: "#fff",
-            marginTop: vs(8),
+            marginTop: vs(0),
             fontSize: s(14),
             fontWeight: "regular",
           }}
@@ -36,7 +38,10 @@ const HomeScreen = () => {
       </View>
 
       <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Splash")}
+        >
           <Text
             style={{ fontSize: s(23), fontWeight: "semibold", color: "#fff" }}
           >
@@ -53,8 +58,8 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height:"100%",
-    width:"100%",
+    height: "100%",
+    width: "100%",
   },
   firstText: {
     // flex:1,
